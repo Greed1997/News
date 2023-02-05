@@ -1,21 +1,54 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="NewsTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="news" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="News" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dKX-Jh-t0j" customClass="NewsImageView" customModule="News" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="79" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="dKX-Jh-t0j" secondAttribute="height" multiplier="79:90" id="gEn-4L-mOg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwG-35-06o">
+                        <rect key="frame" x="89" y="16" width="90" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="XO1-SI-TX1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="qwG-35-06o" secondAttribute="trailing" constant="5" id="0h8-8g-jYv"/>
+                    <constraint firstItem="qwG-35-06o" firstAttribute="leading" secondItem="dKX-Jh-t0j" secondAttribute="trailing" constant="5" id="1AV-gJ-ZUJ"/>
+                    <constraint firstItem="qwG-35-06o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="1jp-di-IWM"/>
+                    <constraint firstAttribute="bottom" secondItem="dKX-Jh-t0j" secondAttribute="bottom" constant="5" id="AjN-Dz-W7J"/>
+                    <constraint firstItem="dKX-Jh-t0j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="VZ0-CE-DcY"/>
+                    <constraint firstItem="dKX-Jh-t0j" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dZy-kO-6mU"/>
+                    <constraint firstItem="dKX-Jh-t0j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="fJn-KG-KdV"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <accessibility key="accessibilityConfiguration" identifier="NewsTableViewCell"/>
+            <connections>
+                <outlet property="newsImageView" destination="dKX-Jh-t0j" id="gW2-JH-Owv"/>
+                <outlet property="newsTitleLabel" destination="qwG-35-06o" id="Xct-Rd-Q7r"/>
+            </connections>
+            <point key="canvasLocation" x="79.389312977099237" y="20.422535211267608"/>
         </tableViewCell>
     </objects>
 </document>

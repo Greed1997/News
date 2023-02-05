@@ -9,15 +9,19 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var newsImageView: NewsImageView!
+    @IBOutlet weak var newsTitleLabel: UILabel!
+    
+    override var reuseIdentifier: String? {
+        "NewsTableViewCell"
     }
     
+    func configure(title: String?, imageURL: String?) {
+        guard newsImageView != nil else { return }
+        guard newsTitleLabel != nil else { return }
+
+        newsImageView.fetchImage(from: imageURL)
+        newsTitleLabel.text = title
+    }
 }
+
